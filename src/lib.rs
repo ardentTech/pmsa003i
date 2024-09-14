@@ -3,10 +3,11 @@
 //! [embedded-hal](https://github.com/rust-embedded/embedded-hal).
 //!
 //! Works on `no_std` and supports both async and blocking operation.
-//! To enable async, use feature `async`.
 //!
 //! See [Pmsa003i] for an example of how to use the library.
-
+//!
+//! ## Feature flags
+#![doc = document_features::document_features!()]
 #![deny(unsafe_code)]
 #![no_std]
 
