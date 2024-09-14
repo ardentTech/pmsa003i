@@ -1,14 +1,14 @@
+//! # Plantower PMSA003I Driver for Embedded HAL
 //! Driver for the PMSA003I particulate sensor using
 //! [embedded-hal](https://github.com/rust-embedded/embedded-hal).
 //!
 //! Works on `no_std` and supports both async and blocking operation.
 //! To enable async, use feature `async`.
 //!
-//! See pmsa003i.rs rustdoc for an example of how to use the library.
+//! See [Pmsa003i] for an example of how to use the library.
 
 #![deny(unsafe_code)]
 #![no_std]
-#![doc = include_str!("../README.md")]
 
 mod error;
 mod pmsa003i;

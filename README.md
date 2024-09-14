@@ -14,7 +14,7 @@ Returns all data as per the [data sheet](https://cdn-shop.adafruit.com/product-f
 - Async operation if the `async` feature is specified
 
 ## Example
-See the pmsa003i.rs rustdoc for an example of how to use the library.
+See [Pmsa003i] for an example of how to use the library.
 
 ## Got inspiration and direction from the following... thank you!
 
