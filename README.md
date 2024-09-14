@@ -14,7 +14,7 @@ Returns all data as per the [data sheet](https://cdn-shop.adafruit.com/product-f
 - Async operation if the `async` feature is specified
 
 ## Example
-See [Pmsa003i] for an example of how to use the library.
+See [Pmsa003i](https://docs.rs/pmsa003i/latest/pmsa003i/struct.Pmsa003i.html) for an example of how to use the library.
 
 ## Got inspiration and direction from the following... thank you!
 
