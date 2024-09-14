@@ -1,14 +1,12 @@
 use crate::error::Error;
 
 #[cfg(not(feature = "async"))]
-use embedded_hal::{delay::DelayNs, i2c::I2c};
+use embedded_hal::i2c::I2c;
 
 #[cfg(feature = "async")]
 use embedded_hal_async::{delay::DelayNs, i2c::I2c};
 
 use crate::types::Reading;
-
-const ADDRESS: u8 = 0x12;
 pub(crate) const RESPONSE_LENGTH: usize = 32;
 
 /// Driver for the PMSA003I sensor
@@ -77,6 +75,10 @@ impl<I2C: I2c> Pmsa003i<I2C> {
             .read(self.address, &mut response)
             .map_err(Error::I2C)?;
 
+        if !self.is_start_of_frame(response) {
+            return Err(Error::BadMagic);
+        }
+
         self.check_data_integrity(response)?;
 
         Ok(response)
@@ -92,7 +94,6 @@ impl<I2C: I2c> Pmsa003i<I2C> {
             .await
             .map_err(Error::I2C)?;
 
-        // make sure this is the start of a frame
         if !self.is_start_of_frame(response) {
             return Err(Error::BadMagic);
         }
