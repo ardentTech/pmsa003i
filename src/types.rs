@@ -5,29 +5,29 @@ use crate::RESPONSE_LENGTH;
 #[derive(Clone, Copy, Debug)]
 pub struct Reading {
     /// PM1.0 concentration in μg/𝑚3
-    pm1: u16,
+    pub pm1: u16,
     /// PM2.5 concentration in μg/𝑚3
-    pm2_5: u16,
+    pub pm2_5: u16,
     /// PM10 concentration in μg/𝑚3
-    pm10: u16,
+    pub pm10: u16,
     /// PM1.0 concentration in μg/𝑚3 under atmospheric environment
-    env_pm1: u16,
+    pub env_pm1: u16,
     /// PM2.5 concentration in μg/𝑚3 under atmospheric environment
-    env_pm2_5: u16,
+    pub env_pm2_5: u16,
     /// PM10 concentration in μg/𝑚3 under atmospheric environment
-    env_pm10: u16,
+    pub env_pm10: u16,
     /// number of particles with diameter beyond 0.3 μ𝑚 in 0.1L of air
-    particles_larger_than_0_3: u16,
+    pub particles_larger_than_0_3: u16,
     /// number of particles with diameter beyond 0.5 μ𝑚 in 0.1L of air
-    particles_larger_than_0_5: u16,
+    pub particles_larger_than_0_5: u16,
     /// number of particles with diameter beyond 1.0 μ𝑚 in 0.1L of air
-    particles_larger_than_1: u16,
+    pub particles_larger_than_1: u16,
     /// number of particles with diameter beyond 2.5 μ𝑚 in 0.1L of air
-    particles_larger_than_2_5: u16,
+    pub particles_larger_than_2_5: u16,
     /// number of particles with diameter beyond 5 μ𝑚 in 0.1L of air
-    particles_larger_than_5: u16,
+    pub particles_larger_than_5: u16,
     /// number of particles with diameter beyond 10 μ𝑚 in 0.1L of air
-    particles_larger_than_10: u16,
+    pub particles_larger_than_10: u16,
 }
 
 impl From<[u8; RESPONSE_LENGTH]> for Reading {
