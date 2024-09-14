@@ -54,22 +54,22 @@ impl<I2C: I2c> Pmsa003i<I2C> {
         self.i2c
     }
 
-    /// Blocking reading
-    #[cfg(not(feature = "async"))]
+    /// Blocking read
+    #[cfg(any(not(feature = "async"), doc))]
     pub fn read(&mut self) -> Result<Reading, Error<I2C::Error>> {
         let result = self.read_raw()?;
         Ok(Reading::from(result))
     }
 
-    /// Async reading
-    #[cfg(feature = "async")]
+    /// Async read
+    #[cfg(any(feature = "async", doc))]
     pub async fn read(&mut self) -> Result<Reading, Error<I2C::Error>> {
         let result = self.read_raw().await?;
         Ok(Reading::from(result))
     }
 
     /// Blocking raw read
-    #[cfg(not(feature = "async"))]
+    #[cfg(any(not(feature = "async"), doc))]
     fn read_raw(&mut self) -> Result<[u8; RESPONSE_LENGTH], Error<I2C::Error>> {
         let mut response = [0; RESPONSE_LENGTH];
 
