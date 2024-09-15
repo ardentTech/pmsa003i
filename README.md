@@ -1,7 +1,7 @@
 # Plantower PMSA003I Driver for Embedded HAL
 
 Driver for the I2C connected 
-[Plantower PMSA003I](https://learn.adafruit.com/pmsa003i/) particulate senmsor.
+[Plantower PMSA003I](https://learn.adafruit.com/pmsa003i/) particulate sensor.
 
 Uses [embedded-hal](https://github.com/rust-embedded/embedded-hal) in order to
 be platform agnostic. It also works in `no_std` environments.
