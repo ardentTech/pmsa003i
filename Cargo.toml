@@ -1,7 +1,7 @@
 [package]
 name = "pmsa003i"
 description = "Plantower PMSA003I Driver for Embedded HAL"
-version = "0.1.5"
+version = "0.1.6"
 edition = "2021"
 
 authors = ["Brian Bustin"]
@@ -15,9 +15,12 @@ embedded-hal = "1.0.0"
 embedded-hal-async = { version = "1.0.0", optional = true }
 defmt = { version = "0.3.8", optional = true }
 document-features = "0.2.10"
+aqi = { version = "0.2.0", optional = true }
 
 [features]
 ## enables async operation
 async = ["dep:embedded-hal-async"]
 ## derives defmt::Format for types and errors to help with logging
 defmt = ["dep:defmt"]
+## enables calculation of AQI values using the aqi crate
+aqi = ["dep:aqi"]

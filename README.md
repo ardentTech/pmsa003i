@@ -12,6 +12,7 @@ Returns all data as per the [data sheet](https://cdn-shop.adafruit.com/product-f
 
 - Blocking operation
 - Async operation if the `async` feature is specified
+- Calculation of AQI using the aqi crate if the `aqi` feature is specified
 
 ## Example
 See [Pmsa003i](https://docs.rs/pmsa003i/latest/pmsa003i/struct.Pmsa003i.html) for an example of how to use the library.
