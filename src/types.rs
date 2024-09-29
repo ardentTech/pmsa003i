@@ -1,3 +1,4 @@
+#[cfg(any(feature = "aqi", doc))]
 use aqi::{AirQuality, AirQualityError};
 
 use crate::RESPONSE_LENGTH;
