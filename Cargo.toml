@@ -24,3 +24,6 @@ async = ["dep:embedded-hal-async"]
 defmt = ["dep:defmt"]
 ## enables calculation of AQI values using the aqi crate
 aqi = ["dep:aqi"]
+
+[package.metadata.docs.rs]
+features = ["aqi"]

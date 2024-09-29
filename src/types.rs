@@ -1,4 +1,4 @@
-#[cfg(any(feature = "aqi", doc))]
+#[cfg(feature = "aqi")]
 use aqi::{AirQuality, AirQualityError};
 
 use crate::RESPONSE_LENGTH;
@@ -32,11 +32,11 @@ pub struct Reading {
     /// number of particles with diameter beyond 10 μ𝑚 in 0.1L of air
     pub particles_larger_than_10: u16,
 
-    #[cfg(any(feature = "aqi", doc))]
+    #[cfg(feature = "aqi")]
     /// PM2.5 converted into an AQI value. Because conversion can fail, returns a result.
     pub aqi_pm2_5: Result<AirQuality, AirQualityError>,
 
-    #[cfg(any(feature = "aqi", doc))]
+    #[cfg(feature = "aqi")]
     /// PM10 converted into an AQI value. Because conversion can fail, returns a result.
     pub aqi_pm10: Result<AirQuality, AirQualityError>,
 }
@@ -57,10 +57,10 @@ impl From<[u8; RESPONSE_LENGTH]> for Reading {
             particles_larger_than_5: u16::from_be_bytes([value[24], value[25]]),
             particles_larger_than_10: u16::from_be_bytes([value[26], value[27]]),
 
-            #[cfg(any(feature = "aqi", doc))]
+            #[cfg(feature = "aqi")]
             aqi_pm2_5: aqi::pm2_5(u16::from_be_bytes([value[6], value[7]]).into()),
 
-            #[cfg(any(feature = "aqi", doc))]
+            #[cfg(feature = "aqi")]
             aqi_pm10: aqi::pm10(u16::from_be_bytes([value[8], value[9]]).into()),
         }
     }
