@@ -11,7 +11,7 @@ readme = "README.md"
 repository = "https://github.com/bbustin/pmsa003i"
 
 categories = ["embedded", "hardware-support", "no-std", "asynchronous"]
-keywords = ["driver", "embedded-hal-driver", "pmsa003i", "aqi", "pm2.5"]
+keywords = ["driver", "embedded-hal-driver", "pmsa003i", "aqi", "pm2_5"]
 
 [dependencies]
 embedded-hal = "1.0.0"
