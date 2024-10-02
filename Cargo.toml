@@ -1,7 +1,7 @@
 [package]
 name = "pmsa003i"
 description = "Plantower PMSA003I Driver for Embedded HAL"
-version = "0.1.7"
+version = "0.1.8"
 edition = "2021"
 
 authors = ["Brian Bustin"]
@@ -9,6 +9,9 @@ authors = ["Brian Bustin"]
 license = "MIT OR Apache-2.0"
 readme = "README.md"
 repository = "https://github.com/bbustin/pmsa003i"
+
+categories = ["embedded", "hardware-support", "no-std", "asynchronous"]
+keywords = ["driver", "embedded-hal-driver", "pmsa003i", "aqi", "pm2.5"]
 
 [dependencies]
 embedded-hal = "1.0.0"
