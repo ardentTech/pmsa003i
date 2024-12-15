@@ -20,4 +20,4 @@ pub use crate::pmsa003i::*;
 pub use crate::types::*;
 
 #[cfg(feature = "aqi")]
-pub use aqi::{AirQuality, AirQualityError};
+pub use aqi::{AirQuality, AirQualityError, AirQualityLevel};
